@@ -1,0 +1,72 @@
+
+
+// Registration parameters
+(Registration "MultiResolutionRegistration")
+(FixedImageDimension 3)
+(MovingImageDimension 3)
+(FixedInternalImagePixelType "float")
+(MovingInternalImagePixelType "float")
+(UseDirectionCosines "true")
+(NumberOfResolutions 3)
+//(ErodeFixedMask "false" "false" "false" "false" "false")
+//(ErodeMovingMask "false" "false" "false" "false" "false")
+
+// Transform parameters
+(Transform "EulerTransform")
+(HowToCombineTransforms "Compose")
+(AutomaticScalesEstimation "true")
+(AutomaticTransformInitialization "true")
+
+// Metric parameters
+(Metric "AdvancedMattesMutualInformation")
+(ShowExactMetricValues "false")
+(CheckNumberOfSamples "true")
+(RequiredRatioOfValidSamples 0.25)
+(NumberOfHistogramBins 32)
+//(NumberOfFixedHistogramBins 32)
+//(FixedKernelBSplineOrder 3)
+(FixedLimitRangeRatio 0.0)
+//(NumberOfMovingHistogramBins 32)
+//(MovingKernelBSplineOrder 3)
+//(MovingLimitRangeRatio 0.0)
+(UseFastAndLowMemoryVersion "true")
+
+// Optimizer parameters
+(Optimizer "AdaptiveStochasticGradientDescent")
+(NewSamplesEveryIteration "true")
+(MaximumNumberOfIterations 500)
+(MaximumNumberOfSamplingAttempts 10)
+(AutomaticParameterEstimation "true")
+(SigmoidInitialTime 0)
+(UseAdaptiveStepSizes "true")
+(NumberOfSamplesForExactGradient 100000)
+
+// Interpolator parameters
+(Interpolator "BSplineInterpolator")
+(BSplineInterpolationOrder 1 1 1 1 1)
+
+
+// ResampleInterpolator parameters
+(ResampleInterpolator "FinalBSplineInterpolator")
+(FinalBSplineInterpolationOrder 3)
+
+// ImageSampler parameters
+(ImageSampler "Random")
+(NumberOfSpatialSamples 3000)
+
+// FixedImagePyramid parameters
+(FixedImagePyramid "FixedSmoothingImagePyramid")
+
+// MovingImagePyramid parameters
+(MovingImagePyramid "MovingSmoothingImagePyramid")
+
+(WritePyramidImagesAfterEachResolution "false")
+
+// Resampler parameters
+(Resampler "DefaultResampler")
+(WriteResultImage "true")
+(CompressResultImage "false")
+(ResultImageFormat "nii")
+(ResultImagePixelType "float")
+(WriteResultImageAfterEachResolution "false")
+

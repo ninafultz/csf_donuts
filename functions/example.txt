@@ -1,0 +1,9 @@
+GENERALDIR = 'P:\Projects\Glymphatics\CompressedSense\';
+allSubjects = dir([GENERALDIR '*_Reconstruction']);
+
+for s =[1:numel(allSubjects)]
+subject = allSubjects(s);
+
+refScanTemp = dir([subject.folder '\' subject.name '\ReferenceScan\Scan*.mhd']);
+referenceScan = metaImageRead([refScanTemp.folder '\' refScanTemp.name]);
+end
