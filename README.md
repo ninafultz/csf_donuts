@@ -4,9 +4,6 @@ purpose: code for csf donuts manuscript
           1) preprocessing
           2) figures
 
-# Clone the repository
-[git clone https://github.com/yourusername/project-name.git](https://github.com/ninafultz/csf_donuts)
-
 # preprocessing of data 
 1) preprocessing of data can be done by running csfdonut_lydiane_preprocessing_scripts.m
 
