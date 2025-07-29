@@ -78,8 +78,8 @@ for s = 1:length(subjects)
             fprintf('Number of voxels in ROI: %d\n', nnz(roi_mask));
 
             values = csf_data(roi_mask);
-            values = values(~isnan(values) & values > 0);
-
+            values = values(values > 0);
+            
             fprintf('Raw voxels: %d | After filtering: %d\n', numel(csf_data(roi_mask)), numel(values));
 
             if ~isempty(values)
@@ -102,9 +102,8 @@ for s = 1:length(subjects)
     end
 end
 
-%% 
+%% extracting data
 
-% Extract the two groups from the cell array
 data1 = groupData{1}; 
 data2 = groupData{2};  
 
@@ -112,13 +111,14 @@ data2 = groupData{2};
 nPairs = min(length(data1), length(data2));
 
 % Create categorical group labels for violinplot
-groupLabels = categorical([repmat("External", length(data1), 1); repmat("Internal", length(data2), 1)]);
+groupLabels = categorical([repmat("External", length(data1), 1); ...
+    repmat("Internal", length(data2), 1)]);
 
 % Combine data for violinplot
 combinedData = [data1; data2];
 
 
-%%
+%% plot
 
 figure('Name', 'CSF Mobility', 'NumberTitle', 'off');
 set(gcf, 'Color', 'w', 'Renderer', 'Painters');
@@ -148,10 +148,9 @@ title('Mean CSF Mobility M1 — External vs. Internal');
 ylabel('Mean ADC (mm^2/s)');
 ylim([0 0.05]);
 xticks([1 2]);
-xticklabels(groupLabels);
+xticklabels({'Internal', 'External'});
 hold off;
 
-% 6.5478e-08
 %% ttest
 
 % Perform paired t-test
@@ -159,29 +158,8 @@ hold off;
 
 % Display results
 fprintf('Paired t-test M1: t(%d) = %.3f, p = %.4f\n', stats.df, stats.tstat, p);
-
-%% 
-
-% %%mean test
-% 
-% % Assume data is an Nx2 matrix where column 1 is "left" and column 2 is "right"
-% % Paste your data into a matrix first:
-% data = [
-%     0.0086, 0.0203;
-%     0.0055, 0.0195;
-%     0.0080, 0.0159;
-%     0.0188, 0.0447;
-%     0.0109, 0.0278;
-%     0.0155, 0.0325;
-%     0.0134, 0.0283;
-%     0.0078, 0.0345;
-%     0.0189, 0.0438;
-%     0.0088, 0.0241;
-%     0.0096, 0.0321
-% ];
-
-
-
+% p =  6.5478e-08 with zeros removed 
+%% mean test
 
 data = [
     0.0159846781753004, 0.0399827267974615;
@@ -285,7 +263,7 @@ for s = 1:length(subjects)
             fprintf('Number of voxels in ROI: %d\n', nnz(roi_mask));
 
             values = csf_data(roi_mask);
-            values = values(~isnan(values) & values > 0);
+            values = values(values > 0);
 
             fprintf('Raw voxels: %d | After filtering: %d\n', numel(csf_data(roi_mask)), numel(values));
 
@@ -311,7 +289,6 @@ end
 
 %% 
 
-% Extract the two groups from the cell array
 data1 = groupData{1}; 
 data2 = groupData{2};  
 
@@ -319,13 +296,14 @@ data2 = groupData{2};
 nPairs = min(length(data1), length(data2));
 
 % Create categorical group labels for violinplot
-groupLabels = categorical([repmat("External", length(data1), 1); repmat("Internal", length(data2), 1)]);
+groupLabels = categorical([repmat("External", length(data1), 1); ...
+    repmat("Internal", length(data2), 1)]);
 
 % Combine data for violinplot
 combinedData = [data1; data2];
 
 
-%%
+%% plot
 
 figure('Name', 'CSF Mobility', 'NumberTitle', 'off');
 set(gcf, 'Color', 'w', 'Renderer', 'Painters');
@@ -344,7 +322,8 @@ x2 = 2 + (rand(nPairs, 1) - 0.5) * jitterAmount;
 % Draw lines and dots
 for i = 1:nPairs
     % Line
-    plot([x1(i), x2(i)], [data1(i), data2(i)], 'Color', [0.5 0.5 0.5], 'LineWidth', 0.7);
+    plot([x1(i), x2(i)], [data1(i), data2(i)], 'Color', ...
+        [0.5 0.5 0.5], 'LineWidth', 0.7);
 
     % Dots (circle markers)
     plot(x1(i), data1(i), 'ko', 'MarkerFaceColor', 'k', 'MarkerSize', 4);
@@ -355,10 +334,9 @@ title('Mean CSF Mobility M2 — External vs. Internal');
 ylabel('Mean ADC (mm^2/s)');
 ylim([0 0.05]);
 xticks([1 2]);
-xticklabels(groupLabels);
+xticklabels({'Internal', 'External'});
 hold off;
 
-% 6.5478e-08
 %% ttest
 
 data = ttest(data1, data2);
@@ -367,14 +345,11 @@ data = ttest(data1, data2);
 
 % Display results
 fprintf('Paired t-test M2: t(%d) = %.3f, p = %.4f\n', stats.df, stats.tstat, p);
-
-%% 
-
-% %%mean test
+% p = 6.5478e-08
+%% %mean test
 % 
 % % Assume data is an Nx2 matrix where column 1 is "left" and column 2 is "right"
 % % Paste your data into a matrix first:
-
 
 % % Logical vector: true if left is at least 20% less than right
 is_20pct_less = data1 < 0.8 * data2;

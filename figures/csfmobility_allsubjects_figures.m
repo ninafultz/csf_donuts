@@ -1,37 +1,40 @@
 %% csf mobility all subjects
 
 %% purpose
-% 1) plot average of ADC as it moves from 0 
-% 2) plot average of FA as it moves from 0
-% 3) violinplot of ADC average as steps
-% 4) violintplot of FA average as steps
-% 5) statistical comparison 
+% 1) plot average of ADC as it moves from 0 for different cross sectionals
+% 2) bar plots for ratings
+% 3) statistical comparison 
 clear;
 
 % Define project parameters
 project_directory = '/exports/gorter-hpc/users/ninafultz/';
 project_name = 'csfdonuts_lydiane';
  
-fig = 'donut02_cross_sec';  % example value
+fig = 'donut02_cross_sec';  % example value: 'mca_cross_sec', 'donut01_cross_sec'
 
 if strcmp(fig, 'mca_cross_sec')
-    subject_list = dir(fullfile(project_directory, project_name, '*20191112_Reconstruction*'));
+    subject_list = dir(fullfile(project_directory, project_name, ...
+        '*20191112_Reconstruction*'));
     roi_patterns = {'masked_b0_ADC_mhd_thr100.0000_MCA_roundseg'}
 elseif strcmp(fig, 'aca_cross_sec')
-    subject_list = dir(fullfile(project_directory, project_name, '*20191210_Reconstruction*'));
+    subject_list = dir(fullfile(project_directory, project_name, ...
+        '*20191210_Reconstruction*'));
     %roi_patterns = {'masked_b0_ADC_mhd_thr100.0000_ACA'};
     roi_patterns = {'ACA_trapped'};
     adc_map = 'masked_b0_ADC_mhd_thr150.0000.nii';
 elseif strcmp(fig, 'ica_cross_sec')
-    subject_list = dir(fullfile(project_directory, project_name, '*20201019_Reconstruction*'));
+    subject_list = dir(fullfile(project_directory, project_name, ...
+        '*20201019_Reconstruction*'));
     roi_patterns = {'masked_b0_ADC_mhd_thr150.0000_ICA'} % 20201019_Reconstruction ICA
     adc_map      = 'masked_b0_ADC_mhd_thr150.0000.nii';
 elseif strcmp(fig, 'donut01_cross_sec')
-    subject_list = dir(fullfile(project_directory, project_name, '*20201014_Reconstruction*'));
+    subject_list = dir(fullfile(project_directory, project_name, ...
+        '*20201014_Reconstruction*'));
     roi_patterns = {'20201014_312_316_166_M2_roundseg'} % 'masked_b0_ADC_mhd_thr100.0000.nii'
     adc_map = 'masked_b0_ADC_mhd_thr100.0000.nii';
 elseif strcmp(fig, 'donut02_cross_sec')
-    subject_list = dir(fullfile(project_directory, project_name, '*20201014_Reconstruction*'));
+    subject_list = dir(fullfile(project_directory, project_name, ...
+        '*20201014_Reconstruction*'));
     roi_patterns = {'20201014_134_340_140_M2_roundseg'} % % use adc_map thr150
     adc_map = 'masked_b0_ADC_mhd_thr150.0000.nii';
 else
@@ -60,7 +63,8 @@ cd (fullfile(project_directory, ...
 filename = 'A1_rating.xlsx';  % Replace with actual CSV file
 col_right = 'a1Right';  % Column name for right A1
 col_left = 'a1Left';    % Column name for left A1
-categories = {'eye donut', 'full donut',  'high csf mobility', 'compartment', 'no donut'};
+categories = {'eye donut', 'full donut',  'high csf mobility', ...
+    'compartment', 'no donut'};
 
 plotDonutBarPlots(filename, col_right, col_left, categories)
 %% M1
