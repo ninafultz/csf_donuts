@@ -2,16 +2,11 @@
 % nina fultz december 2024
 % n.e.fultz@lumc.nl
 
-%% to do:
-% 1) automate t2 registration - might be doing compressed sense to make it
-% full brain
-% 2) automate angiogram registration - might be doing compressed sense to make it
-% full brain
-% 3) finish plotting functions at the end 
-
-%% goals:
 clear
 clc
+
+%% goals:
+
 %%
 % defining paths 
 project_directory = '/exports/gorter-hpc/users/ninafultz/'
@@ -76,7 +71,7 @@ end
 
 
    
-%% running biasfield correction 
+%% running spm biasfield correction - will make GM, WM, CSF masks
 
 disp('Running biasfield correction...');
 
@@ -115,15 +110,15 @@ referenceScan = metaImageRead(referenceScanPath);
 mhd_to_niftis(subjPath, referenceScan);
 
 
-%% 
-
-% 1) convert ADC and FA maps to niftis
+%% convert ADC and FA maps to niftis
 disp('converting ADC and FA maps to niftis...');
 [ADC_map_avg, FA_map_avg] = ADCandFAmaps_to_niftis(subjPath);
 
 %% registration elastix for CSF-STREAM space, ADC, FA, and original T1
 % Predefined list of subjects to exclude
-% will have to run the excluded subjects in itksnap, manually make registration, apply with ANTS
+% will have to run the excluded subjects in itksnap, manually 
+% make registration, apply with ANTS
+
 excluded_subjects = {'20191022_Reconstruction' '20191112_Reconstruction' ...
     '20191029_Reconstruction'};  % List of excluded subjects
 
@@ -132,7 +127,8 @@ excluded_subjects = {'20191022_Reconstruction' '20191112_Reconstruction' ...
 
 % % Check if the subject is in the excluded list
 % if ismember(subject_name, excluded_subjects)
-%     fprintf('Subject "%s" is in the exclusion list. go run SPM with same origins.\n', subject_name);
+%     fprintf('Subject "%s" is in the exclusion list. go run SPM 
+%     with same origins.\n', subject_name);
 %     return;  % Exit the script
 % end
 
@@ -223,55 +219,3 @@ end
 %% reorientating and thresholding adc and fa maps
 
 adc_and_fa_masking_reorientating(subjPath, subject_code, ADC_map_avg, FA_map_avg);
-
-
-%% **Donut Definition and Criteria:**
-% 
-% **Donuts in Relation to CSF Mobility:**
-% 
-% - **Arteries and Veins on CSF Mobility**:
-%     - A "donut" must show a difference in ADC from the surrounding subarachnoid space (SAS) of at least 0.01 ADC units and have an absolute ADC value above 0.01.
-%     - The donut can exist in the transversal, axial, or coronal plane.
-%     - It does not need to encompass the entire circumference of the artery or vein before reaching the SAS wall. However, in at least one plane, there must be a measurable ADC difference between the donut and the SAS, and the difference should be visible in at least two slices.
-%     - Donuts localized to one side of the artery or vein must be noted as lateralized donuts.
-%     - If only a T1 is available, we will define CSF-mobility with the T1; we will look at MCA, ACA, and ACE points/bridging veins; MCA, ACA will be defined by T1 arteries, and ACE points will be defined as being in sagittal sinus and  run from through the SAS into the dura
-% 
-% **Vessel Criteria for Donuts:**
-% 
-% - The donut must be associated with a vein or an artery:
-%     - Arteries: Defined via angiogram and have a T2* value of above 30
-%        and are in clusters
-%     - Veins: Defined via venogram with a T2* value below 30 ms and are in
-%        clusters
-% - All definitions will be confirmed by a neuroradiologist prior to publication.
-% 
-% **Additional Criteria:**
-% 
-% - The donut should show a steep drop-off (non-gradient transition) with the SAS.
-% 
-% **T2 Analysis of Donuts:**
-% 
-% - **T2 Donuts**:
-%     - Should exhibit a T2 difference of approximately 200 ms relative to the surrounding SAS.
-%     - Can be observed in the transversal, axial, or coronal plane.
-%     - Similar to ADC donuts, T2 donuts do not need to encompass the entire side of the artery or vein before reaching the SAS wall, but at least one plane must show the T2 difference, and should be visible in at least two slices.
-%     - T2 donuts that appear on only one side of the artery or vein must be noted as lateralized donuts.
-% - T2 donuts may not necessarily correlate with CSF mobility but that should still be documented.
-
-% **Vessel Criteria for Donuts:**
-% 
-% - The donut must be associated with a vein or an artery:
-%     - Arteries: Defined via angiogram and have a T2* value of above 30
-%        and are in clusters
-%     - Veins: Defined via venogram with a T2* value below 30 ms and are in
-%        clusters
-% - All definitions will be confirmed by a neuroradiologist prior to publication.
-% 
-% **Additional Criteria:**
-% 
-% - Like ADC donuts, T2 donuts must show a steep drop-off (non-gradient transition) with the SAS
-
-%% plotting 
-
-csfmobility_rois.m
-

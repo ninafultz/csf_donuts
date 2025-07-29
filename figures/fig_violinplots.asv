@@ -43,7 +43,8 @@ for s = 1:length(subjects)
             csfMapPath = metaImageRead(referenceScanPath);
             csf_data = csfMapPath;
         else
-             csfMapPath = fullfile(subjPath, 'reoriented', 'masked_b0_ADC_mhd_thr150.0000.nii');
+             csfMapPath = fullfile(subjPath, 'reoriented', ...
+                 'masked_b0_ADC_mhd_thr150.0000.nii');
              % Load CSF mobility map
             csf_data = niftiread(csfMapPath);
         end
@@ -69,6 +70,7 @@ for s = 1:length(subjects)
  
             roi_mask = niftiread(roiFile);            
             
+            %% 20191029 is not in nifti format, so had to permute
             if strcmp(subjID, '20191029_Rec')
                     roi_mask = permute(roi_mask > 0, [2 1 3]);  % swap x and y axes
             else
@@ -78,7 +80,8 @@ for s = 1:length(subjects)
             fprintf('Number of voxels in ROI: %d\n', nnz(roi_mask));
 
             values = csf_data(roi_mask);
-            values = values(values > 0);
+            values = values(values > 0); % some of the ROIs have ...
+                                        zeros because of how ROI was drawn
             
             fprintf('Raw voxels: %d | After filtering: %d\n', numel(csf_data(roi_mask)), numel(values));
 
