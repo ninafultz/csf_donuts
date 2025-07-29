@@ -1,8 +1,8 @@
 # csf donuts
-# nina fultz - n.e.fultz@lumc.nl - july 2025
-# purpose: code for csf donuts manuscript
-#          1) preprocessing
-#          2) figures
+nina fultz - n.e.fultz@lumc.nl - july 2025
+purpose: code for csf donuts manuscript
+          1) preprocessing
+          2) figures
 
 # Clone the repository
 [git clone https://github.com/yourusername/project-name.git](https://github.com/ninafultz/csf_donuts)
