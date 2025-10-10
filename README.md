@@ -9,4 +9,6 @@ purpose: code for csf donuts manuscript
 
 # figures
 1) cross sectional and bar plots for figures 2 and 3 can be made with figures/fig_crosssec_and_barplots.m
-2) violin plots of SAS vs. PVSAS in figures 2 and 3 can be made with figures/fig_violinplots.m
+2) violin plots of SAS vs. PVSAS CSF-mobility in figures 2 and 3 can be made with figures/fig_violinplots.m
+3) violin plots of SAS vs. PVSAS FA in Supplemental can be made with figures/fig_violinplots_FA.m
+4) violin plots of SAS vs. PVSAS FA in Supplemental can be made with figures/fig_violinplots_b0.m
