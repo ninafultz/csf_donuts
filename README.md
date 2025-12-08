@@ -10,16 +10,16 @@ purpose: code for csf donuts manuscript
 
 # figures
 
-Figures can be generated using the following scripts:
+Figures can be generated using the following scripts (look in 'figures' folder):
 
 1. **General figure creation**  
    - `csf_donuts_creatingfigures.m`
 
 2. **Cross-sectional and bar plots** (Figures 2d,h and 3g,h,i)  
-   - `figures/fig_crosssec_and_barplots.m`
+   - `fig_crosssec_and_barplots.m`
 
 3. **Violin plots of SAS vs. PVSAS CSF-mobility** (Figures 2 and 3)  
-   - `figures/fig_violinplots.m`
+   - `fig_violinplots.m`
 
 4. **CSF-mobility and FA comparison between arteries** (Figure 3o, Supplemental Figure 4e)  
    - `fig_violinplots_aca_m1_postm1.m`  
@@ -31,10 +31,10 @@ Figures can be generated using the following scripts:
    - `physio_AveragePlots_ACA.m`
 
 6. **Violin plots of SAS vs. PVSAS FA** (Supplemental Figure 4)  
-   - `figures/fig_violinplots_FA.m`
+   - `fig_violinplots_FA.m`
 
 7. **Violin plots of SAS vs. PVSAS CSF-signal** (Supplemental Figure 5)  
-   - `figures/fig_violinplots_b0.m`
+   - `fig_violinplots_b0.m`
 
 8. **Vector plots**  
    - `rgb_maps.m`  
