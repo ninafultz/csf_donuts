@@ -41,7 +41,7 @@ reoriented     = fullfile(subjPath, 'reoriented');
 %         case '20191022_Reconstruction'
 %             threshold = 150;
         otherwise
-            threshold = 150; % 75; 100; 125; 150
+            threshold = 175; % 75; 100; 125; 150; 175; 200; 210
     end
 
 

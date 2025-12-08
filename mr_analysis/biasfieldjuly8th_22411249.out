@@ -1,0 +1,850 @@
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 02:28:01 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 02:28:01 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     02:28:01 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/T1w.nii,1
+Completed                               :          02:44:48 - 21/10/2025
+21-Oct-2025 02:44:48 - Done    'Segment'
+21-Oct-2025 02:44:48 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01 /home/nefultz/scripts/local/spm.sif batch /tmp/tmp26cpyy72.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-01/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 02:45:11 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 02:45:11 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     02:45:11 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/T1w.nii,1
+Completed                               :          03:01:36 - 21/10/2025
+21-Oct-2025 03:01:36 - Done    'Segment'
+21-Oct-2025 03:01:36 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02 /home/nefultz/scripts/local/spm.sif batch /tmp/tmp2hj_1sqi.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-02/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 03:01:58 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 03:01:58 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     03:01:58 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/T1w.nii,1
+Completed                               :          03:19:06 - 21/10/2025
+21-Oct-2025 03:19:06 - Done    'Segment'
+21-Oct-2025 03:19:06 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03 /home/nefultz/scripts/local/spm.sif batch /tmp/tmptjt4xdmu.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-03/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 03:19:28 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 03:19:28 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     03:19:28 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/T1w.nii,1
+Completed                               :          03:39:47 - 21/10/2025
+21-Oct-2025 03:39:47 - Done    'Segment'
+21-Oct-2025 03:39:47 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04 /home/nefultz/scripts/local/spm.sif batch /tmp/tmp4ys9cs5i.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-04/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 03:40:09 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 03:40:09 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     03:40:09 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/T1w.nii,1
+Completed                               :          04:11:16 - 21/10/2025
+21-Oct-2025 04:11:16 - Done    'Segment'
+21-Oct-2025 04:11:16 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05 /home/nefultz/scripts/local/spm.sif batch /tmp/tmpj_ywku78.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-05/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 04:11:45 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 04:11:45 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     04:11:45 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/T1w.nii,1
+Completed                               :          04:31:27 - 21/10/2025
+21-Oct-2025 04:31:27 - Done    'Segment'
+21-Oct-2025 04:31:27 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06 /home/nefultz/scripts/local/spm.sif batch /tmp/tmpeyd3sflq.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-06/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 04:31:50 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 04:31:50 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     04:31:50 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/T1w.nii,1
+Completed                               :          04:47:20 - 21/10/2025
+21-Oct-2025 04:47:20 - Done    'Segment'
+21-Oct-2025 04:47:20 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07 /home/nefultz/scripts/local/spm.sif batch /tmp/tmpdupchvtl.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-07/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 04:47:42 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 04:47:42 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     04:47:42 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/T1w.nii,1
+Completed                               :          05:05:38 - 21/10/2025
+21-Oct-2025 05:05:38 - Done    'Segment'
+21-Oct-2025 05:05:38 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08 /home/nefultz/scripts/local/spm.sif batch /tmp/tmpd04v2cqs.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-08/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 05:06:01 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 05:06:01 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     05:06:01 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/T1w.nii,1
+Completed                               :          05:23:53 - 21/10/2025
+21-Oct-2025 05:23:53 - Done    'Segment'
+21-Oct-2025 05:23:53 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09 /home/nefultz/scripts/local/spm.sif batch /tmp/tmp_i5w5wn_.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-09/T1w_other.nii
+Traceback (most recent call last):
+  File "./biasfieldcorrection", line 115, in <module>
+    raise FileNotFoundError("Input file does not exist or is not readable.")
+FileNotFoundError: Input file does not exist or is not readable.
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 05:24:14 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 05:24:14 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     05:24:14 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/T1w.nii,1
+Completed                               :          05:39:19 - 21/10/2025
+21-Oct-2025 05:39:19 - Done    'Segment'
+21-Oct-2025 05:39:19 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11 /home/nefultz/scripts/local/spm.sif batch /tmp/tmppue_3iq8.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-11/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 05:39:41 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 05:39:41 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     05:39:41 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/T1w.nii,1
+Completed                               :          05:55:35 - 21/10/2025
+21-Oct-2025 05:55:35 - Done    'Segment'
+21-Oct-2025 05:55:35 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12 /home/nefultz/scripts/local/spm.sif batch /tmp/tmpo6ni6dri.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-12/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 05:55:56 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 05:55:56 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     05:55:57 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/T1w.nii,1
+Completed                               :          06:16:27 - 21/10/2025
+21-Oct-2025 06:16:27 - Done    'Segment'
+21-Oct-2025 06:16:27 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13 /home/nefultz/scripts/local/spm.sif batch /tmp/tmpqp9sg63p.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-13/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 06:16:48 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 06:16:48 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     06:16:48 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/T1w.nii,1
+Completed                               :          06:35:07 - 21/10/2025
+21-Oct-2025 06:35:07 - Done    'Segment'
+21-Oct-2025 06:35:08 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14 /home/nefultz/scripts/local/spm.sif batch /tmp/tmp9wg474t9.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-14/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 06:35:29 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 06:35:29 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     06:35:29 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/T1w.nii,1
+Completed                               :          07:06:47 - 21/10/2025
+21-Oct-2025 07:06:47 - Done    'Segment'
+21-Oct-2025 07:06:47 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15 /home/nefultz/scripts/local/spm.sif batch /tmp/tmp1kdq2xsm.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-15/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 07:07:13 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 07:07:13 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     07:07:13 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/T1w.nii,1
+Completed                               :          07:26:32 - 21/10/2025
+21-Oct-2025 07:26:32 - Done    'Segment'
+21-Oct-2025 07:26:32 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16 /home/nefultz/scripts/local/spm.sif batch /tmp/tmplzg8sotu.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-16/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 07:26:53 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 07:26:53 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     07:26:53 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/T1w.nii,1
+Completed                               :          07:41:48 - 21/10/2025
+21-Oct-2025 07:41:48 - Done    'Segment'
+21-Oct-2025 07:41:48 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17 /home/nefultz/scripts/local/spm.sif batch /tmp/tmphgt0l55x.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-17/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 07:42:09 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 07:42:09 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     07:42:09 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/T1w.nii,1
+Completed                               :          07:59:29 - 21/10/2025
+21-Oct-2025 07:59:29 - Done    'Segment'
+21-Oct-2025 07:59:29 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18 /home/nefultz/scripts/local/spm.sif batch /tmp/tmp_2j4xqz0.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-18/T1w_other.nii
+SPM12, version 7771 (standalone)
+MATLAB, version 9.7.0.1261785 (R2019b) Update 3
+ ___  ____  __  __                                            
+/ __)(  _ \(  \/  )                                           
+\__ \ )___/ )    (   Statistical Parametric Mapping           
+(___/(__)  (_/\/\_)  SPM12 - https://www.fil.ion.ucl.ac.uk/spm/
+
+
+
+------------------------------------------------------------------------
+21-Oct-2025 07:59:50 - Running job #1
+------------------------------------------------------------------------
+21-Oct-2025 07:59:50 - Running 'Segment'
+
+SPM12: spm_preproc_run (v7670)                     07:59:50 - 21/10/2025
+========================================================================
+Segment /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/T1w.nii,1
+Completed                               :          08:17:00 - 21/10/2025
+21-Oct-2025 08:17:00 - Done    'Segment'
+21-Oct-2025 08:17:00 - Done
+
+Running command: singularity run -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19 -B /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19 /home/nefultz/scripts/local/spm.sif batch /tmp/tmpzpleo484.m
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/mT1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/T1w_bc.nii -overwrite -expr 'a' -datum short
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/c1T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/T1w_GM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/c2T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/T1w_WM.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/c3T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/T1w_CSF.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/c4T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/T1w_bone.nii -overwrite -expr 'a' -datum float
+Running command: 3dcalc -a /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/c5T1w.nii -prefix /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/T1w_other.nii -overwrite -expr 'a' -datum float
+WARNING: While bind mounting '/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19:/exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19': destination is already in the mount point list
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/T1w_bc.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/T1w_GM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/T1w_WM.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/T1w_CSF.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/T1w_bone.nii
+++ 3dcalc: AFNI version=AFNI_21.3.07 (Nov 23 2021) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /exports/gorter-hpc/users/ninafultz/SiriRegistration/sub-19/T1w_other.nii

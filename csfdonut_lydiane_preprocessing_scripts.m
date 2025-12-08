@@ -134,7 +134,7 @@ excluded_subjects = {'20191022_Reconstruction' '20191112_Reconstruction' ...
 
 disp('Running elastix registration...');
 
-fixed_image  = fullfile(regDir, 'B0_properOrientation.nii');  % Path to the fixed image
+% % fixed_image  = fullfile(regDir, 'B0_properOrientation.nii');  % Path to the fixed image
 fixed_image  = fullfile(regDir, 'B0_from_mhd.nii');  % Path to the fixed image
 
 output_dir   = fullfile(subjPath, 'reoriented');

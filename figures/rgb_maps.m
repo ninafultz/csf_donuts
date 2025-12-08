@@ -1,0 +1,107 @@
+clear;
+
+GENERALDIR = 'R:\- Gorter\CSF_STREAM\Data\';
+newFolder  = 'R:\- Gorter\- Personal folders\Fultz, N\csfdonuts_lydiane\';
+physioFolder = '\Cardiac\T2prep';
+physio = 'cardiac';
+threshold = 75;
+
+allSubjects = dir([GENERALDIR '*20201014_Reconstruction']);
+
+for s = 1:numel(allSubjects)
+
+    subject = allSubjects(s);
+    disp(subject.name);
+
+    % reference scan
+    refScanTemp = dir(fullfile(subject.folder, subject.name, 'ReferenceScan', 'Scan*.mhd'));
+    referenceScan = metaImageRead(fullfile(refScanTemp.folder, refScanTemp.name));
+
+    % colour directions
+    Mv=[1,0,0]; Pv=[0,1,0]; Sv=[0,0,1];
+
+    for p = 1:6
+        disp(p)
+
+        load(fullfile(subject.folder, subject.name, physioFolder, 'Results', ...
+            sprintf('DTIresult_phase%d.mat',p)), ...
+            'VectorF','FA');
+
+            fprintf('reference b0 size: [%d %d %d]\n', size(referenceScan))
+            fprintf('csf mobility size: [%d %d %d]\n', size(VectorF))
+            
+            targetSize = [450, 556, 422];
+            
+            x = size(VectorF);
+            % Check size
+            if ~isequal(size(VectorF), targetSize) && x(1) == 430
+                fprintf('Zero padding VectorF...\n')
+            
+                        nii_data_zeros = VectorF;
+                        numPad = 20;
+                        nii_data_zeros = cat(3, zeros(size(nii_data_zeros,1), ...
+                        size(nii_data_zeros,2), numPad), nii_data_zeros);
+                        
+                        ADC_map_avg_withzeros = nii_data_zeros;
+                        VectorF_thresh = ADC_map_avg_withzeros .* (referenceScan > threshold);
+
+                        figure;
+                        % nii_data = mat2gray(min(max(nii_data_zeros,0),0.05)/0.05);
+                        % rgb_vol = repmat(nii_data,[1 1 1 3]);
+                        % rgb_vol(:,:,:,1) = rgb_vol(:,:,:,1) + 0.5*double(roi_pvsas);
+                        % rgb_vol(:,:,:,2) = rgb_vol(:,:,:,2) + 0.5*double(roi_sas);
+                        % rgb_vol(rgb_vol > 1) = 1;
+                        % figure('Name', sprintf('%s - %s - ROI %s', subject_code, physio, roiName));
+                        % imshow3Dfull(rgb_vol);
+                        % title(sprintf('%s - %s - ROI %s (0-0.05 window)', subject_code, physio, roiName));   
+                else
+                            VectorF_thresh = VectorF .* (referenceScan > threshold);
+            
+            end
+
+        VectorF_thresh(VectorF_thresh == 0) = NaN;
+
+        if p == 1
+            % allocate full containers
+            VectorF_thresh_allPh = nan([size(VectorF_thresh) 6]);
+            RGBmap_thresh_allPh = nan([size(VectorF_thresh,1), size(VectorF_thresh,2), ...
+                                       size(VectorF_thresh,3), 3, 6]);
+        end
+
+        RGBmap_thresh = nan(size(VectorF_thresh,1), size(VectorF_thresh,2), 3, size(VectorF_thresh,3));
+
+        % RGB mapping
+        for i = 1:size(FA,1)
+            for j = 1:size(FA,2)
+                for k = 1:size(FA,3)
+                    Ev = squeeze(VectorF_thresh(i,j,k,:));
+                    if all(~isnan(Ev))
+                        RGBmap_thresh(i,j,1,k) = FA(i,j,k)*cos(atan2(norm(cross(Mv,Ev)),dot(Mv,Ev)));
+                        RGBmap_thresh(i,j,2,k) = FA(i,j,k)*cos(atan2(norm(cross(Pv,Ev)),dot(Pv,Ev)));
+                        RGBmap_thresh(i,j,3,k) = FA(i,j,k)*cos(atan2(norm(cross(Sv,Ev)),dot(Sv,Ev)));
+                    end
+                end
+            end
+        end
+
+        % store per phase
+        VectorF_thresh_allPh(:,:,:,:,p) = VectorF_thresh;
+        RGBmap_thresh_allPh(:,:,:,:,p) = permute(RGBmap_thresh,[1 2 4 3]);
+
+    end % phase loop
+
+    % saving
+    outDir = fullfile(newFolder, subject.name, 'vectorsRGB');
+    mkdir(outDir);
+
+    % mean across phases
+    RGBmap_thresh_mean   = abs(mean(RGBmap_thresh_allPh, 5));
+    VectorF_thresh_mean  = abs(mean(VectorF_thresh_allPh, 5));
+    
+    save(fullfile(outDir, 'Vectors_RBGThresh75_WHOLEBRAIN.mat'),'VectorF_thresh_mean','RGBmap_thresh_mean','-v7.3');
+
+    save(fullfile(outDir,'RGBmapThresh75.mat'), 'RGBmap_thresh_allPh','-v7.3');
+    save(fullfile(outDir, 'Vectors_RBGThresh150_mean.mat'), ...
+     'VectorF_thresh_mean', 'RGBmap_thresh_mean', '-v7.3');
+end 
+

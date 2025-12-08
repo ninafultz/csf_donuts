@@ -19,7 +19,7 @@ anatFolder     = fullfile(subjPath, 'anat');  % anat folder path
 
 
         % Find the source file in the anat folder
-         sourceFiles = dir(fullfile(anatFolder, 'B0_from_mhd.nii'));
+         sourceFiles = dir(fullfile(regDir, 'B0_from_mhd.nii'));
 
             
                     % Conditional check
@@ -83,7 +83,7 @@ for i = 1:length(mat_files)
     output_nii_file = fullfile(adc, [base_name '.nii']); % Define the output .nii file path
     % 
     % Save the T2 map as a NIfTI file
-    niftiwrite(ADC_map_avg, output_nii_file, niftiInfo);
+   % niftiwrite(ADC_map_avg, output_nii_file, niftiInfo);
 
 end
 
