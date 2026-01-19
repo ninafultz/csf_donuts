@@ -1,6 +1,5 @@
 # csf donuts
-run in MATLAB2020b
-nina fultz - n.e.fultz@lumc.nl - dec 2025
+nina fultz - n.e.fultz@lumc.nl - dec 2025 - run in MATLAB2020b
 purpose: code for csf donuts manuscript
           1) preprocessing
           2) figures
