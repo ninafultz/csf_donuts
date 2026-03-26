@@ -1,0 +1,201 @@
+%% defining paths
+project_directory = 'R:\- Gorter\- Personal folders\Fultz, N\';
+project_name      = 'csfdonuts_lydiane';
+scripts           = fullfile(project_directory, 'scripts', project_name);
+
+%% params
+binWidth = 0.45;
+addpath(genpath(fullfile(scripts, 'csfdonuts_lydiane')));
+addpath(genpath(fullfile(scripts, 'toolbox', 'nifti_tools-master')));
+addpath(genpath(fullfile(scripts, 'toolbox', 'elastix-5.2.0-linux')));
+addpath(genpath(fullfile(scripts, 'toolbox')));
+addpath(genpath('R:\- Gorter\- Personal folders\Fultz, N\scripts\Violinplot-Matlab-master'));
+addpath(genpath(fullfile(scripts, 'dcm2niix')));
+addpath(genpath(fullfile(scripts)));
+
+ROI = 'M2';
+
+subject_list = {
+     '20191112_Reconstruction'
+     '20201008_Reconstruction'
+     '20201016_Reconstruction'
+     '20191029_Rec'
+      '20201014_Reconstruction'
+    '20191022_Reconstruction'
+    '20201020_Reconstruction'
+    '20201111_Reconstruction'
+    '20191210_Reconstruction'
+    '20201019_Reconstruction'
+    '20201110_Reconstruction'};
+
+% Define discrete shells (not cumulative)
+shellEdges = [0, 1.5, 3]; % mm — shells are (0-1], (1-2], (2-3]
+shellLabels = {'0–1.5 mm', '1.5–3 mm'};
+nShells = numel(shellLabels);
+
+% Storage: subjects x shells
+AllMeanADC = zeros(numel(subject_list), nShells);
+AllMeanB0  = zeros(numel(subject_list), nShells);
+
+    subjPath = fullfile(project_directory, project_name);
+    CCDir    = fullfile(subjPath, 'concentricCircleResults');
+    addpath(genpath(fullfile(CCDir)));
+    cd(CCDir);
+
+% Load once before the loop
+
+   cd(CCDir);
+    load(['allCSFmobilityLydiane' ROI '_Median_combined_manuallycorrected.mat']);
+    load(['allB0Lydiane' ROI '_Median_combined_manuallycorrected.mat']);
+
+allADC = averageADC_MCA;  % 11
+allB0  = averageCSF_MCA;   % 11
+
+for k = 1:numel(subject_list)
+    meanADC = allADC(k, :);   % 1 x 10 — current subject only
+    b0      = allB0(k, :);    % 1 x 10
+
+    nBins      = size(meanADC, 2);
+    binCenters = ((1:nBins)-1) * binWidth;
+
+    for s = 1:nShells
+        inShell = binCenters > shellEdges(s) & binCenters <= shellEdges(s+1);
+        if any(inShell)
+            AllMeanADC(k, s) = mean(meanADC(inShell));
+            AllMeanB0(k, s)  = mean(b0(inShell));
+        else
+            AllMeanADC(k, s) = NaN;
+            AllMeanB0(k, s)  = NaN;
+        end
+    end
+end
+%% Violin Plot — ADC
+
+
+figure('Name', ['CSF Mobility — ' ROI], 'NumberTitle', 'off');
+subplot(1,1,1);
+set(gcf, 'Color', 'w', 'Renderer', 'Painters');
+
+% Plot violins without default data points
+violinplot(AllMeanADC, shellLabels, 'ShowData', false);
+hold on;
+
+% Jitter settings
+nSubjects    = numel(subject_list);
+jitterAmount = 0.1;
+rng(1);  % reproducible jitter
+
+% Pre-generate jittered x positions for all subjects x shells
+xJitter = zeros(nSubjects, nShells);
+for s = 1:nShells
+    xJitter(:, s) = s + (rand(nSubjects, 1) - 0.5) * jitterAmount;
+end
+hold on;
+% Draw connecting lines between shells for each subject
+for i = 1:nSubjects
+    plot(xJitter(i, :), AllMeanADC(i, :), ...
+        'Color', [0.5 0.5 0.5], ...
+        'LineWidth', 0.7);
+end
+
+% Overlay dots on top of lines
+for i = 1:nSubjects
+    for s = 1:nShells
+        if ~isnan(AllMeanADC(i, s))
+            plot(xJitter(i, s), AllMeanADC(i, s), 'ko', ...
+                'MarkerFaceColor', 'k', ...
+                'MarkerSize', 4);
+        end
+    end
+end
+hold on;
+
+% Formatting
+ylabel('CSF Mobility (mm²/s)');
+xlabel('Distance from Vessel');
+title(['CSF Mobility — ' ROI]);
+xticks(1:nShells);
+xticklabels(shellLabels);
+set(gca, 'FontSize', 12, 'Box', 'off', 'TickDir', 'out');
+
+hold on;
+
+%
+% Perform paired t-test
+
+data1 = AllMeanADC(:,1);
+data2 = AllMeanADC(:,2);
+[~, p, ~, stats] = ttest(data1, data2);
+
+% Display results
+fprintf('Paired t-test M1: t(%d) = %.3f, p = %.4f\n', stats.df, stats.tstat, p);
+
+% Test for >20% difference between column 1 and column 2 per subject
+pctDiff = (data1 - data2) ./ data1 * 100;  % % difference relative to col 1
+flagged = pctDiff > 2;
+
+fprintf('Subjects with >20%% difference between col1 and col2:\n');
+disp(find(flagged));
+fprintf('Their %% differences:\n');
+disp(pctDiff(flagged));
+
+
+
+% % % % % 
+figure;
+subplot(1,2,2)
+%set(gcf, 'Color', 'w', 'Renderer', 'Painters');
+
+% Plot violins without default data points
+violinplot(AllMeanB0, shellLabels, 'ShowData', false);
+ylim([100 500]);
+hold on;
+
+% Jitter settings
+nSubjects    = numel(subject_list);
+jitterAmount = 0.1;
+rng(1);  % reproducible jitter
+
+% Pre-generate jittered x positions for all subjects x shells
+xJitter = zeros(nSubjects, nShells);
+for s = 1:nShells
+    xJitter(:, s) = s + (rand(nSubjects, 1) - 0.5) * jitterAmount;
+end
+
+% Draw connecting lines between shells for each subject
+for i = 1:nSubjects
+    plot(xJitter(i, :), AllMeanB0(i, :), ...
+        'Color', [0.5 0.5 0.5], ...
+        'LineWidth', 0.7);
+end
+
+% Overlay dots on top of lines
+for i = 1:nSubjects
+    for s = 1:nShells
+        if ~isnan(AllMeanB0(i, s))
+            plot(xJitter(i, s), AllMeanB0(i, s), 'ko', ...
+                'MarkerFaceColor', 'k', ...
+                'MarkerSize', 4);
+        end
+    end
+end
+
+% Formatting
+ylabel('CSF Signal');
+xlabel('Distance from Vessel');
+title(['CSF Signal — ' ROI]);
+xticks(1:nShells);
+xticklabels(shellLabels);
+set(gca, 'FontSize', 12, 'Box', 'off', 'TickDir', 'out');
+
+hold off;
+
+%
+% Perform paired t-test
+
+data1 = AllMeanB0(:,1);
+data2 = AllMeanB0(:,2);
+[~, p, ~, stats] = ttest(data1, data2);
+
+% Display results
+fprintf('Paired t-test M1: t(%d) = %.3f, p = %.4f\n', stats.df, stats.tstat, p);

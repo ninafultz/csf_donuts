@@ -1,0 +1,130 @@
+%% plotting Concentric Circles lydianes way
+% csf donut protocol for CAA patients 
+% nina fultz january 2026
+% n.e.fultz@lumc.nl
+
+%% goals:
+clear
+clc
+%%
+% defining paths 
+project_directory = 'R:\- Gorter\- Personal folders\Fultz, N\';
+project_name      = 'csfdonuts_lydiane'
+scripts           = fullfile(project_directory, 'scripts', project_name);
+
+subject_list = {
+     '20191112_Reconstruction'
+     '20201008_Reconstruction'
+     '20201016_Reconstruction'
+     '20191029_Rec'
+      '20201014_Reconstruction'
+    '20191022_Reconstruction'
+    '20201020_Reconstruction'
+    '20201111_Reconstruction'
+    '20191210_Reconstruction'
+    '20201019_Reconstruction'
+    '20201110_Reconstruction'};
+
+% subject_list = {
+%      '20201016_Reconstruction'
+%     };
+
+% subject_list = {
+%     '20201020_Reconstruction'
+%     '20201111_Reconstruction'
+%     '20191210_Reconstruction'
+%     '20201019_Reconstruction'
+%     '20201110_Reconstruction'};
+%%params
+voxSize = 0.45; % voxel size mm
+maxDist = 10; % distance away from vessel - mm 
+binWidth = 0.45; % bins - probs same as your voxsize - mm
+
+addpath(genpath(fullfile(scripts, 'csfdonuts_lydiane')));
+addpath(genpath(fullfile(scripts, 'toolbox', 'nifti_tools-master')));
+addpath(genpath(fullfile(scripts, 'toolbox', 'elastix-5.2.0-linux')));
+addpath(genpath(fullfile(scripts, 'toolbox')));
+addpath(genpath(fullfile(scripts, 'dcm2niix')));
+addpath(genpath(fullfile(scripts)));
+
+CCDir = 'R:\- Gorter\- Personal folders\Fultz, N\csfdonuts_lydiane\concentricCircleResults';
+
+ROIs = {'M2'};
+dilationDiameter = 1:10;
+voxSize = 0.45;
+%binCenters = (1:length(dilationDiameter(:))-1) * voxSize;
+binCenters = (0:length(dilationDiameter(:))-1) * voxSize;
+
+% Before your ROI loop
+nSubjects = numel(subject_list);
+subjectColors = lines(nSubjects);
+
+for r = 1:numel(ROIs)
+    ROI = ROIs{r};
+    cd(CCDir);
+    load(['allCSFmobilityLydiane' ROI '_Median_combined_manuallycorrected.mat']);
+    load(['allB0Lydiane' ROI '_Median_combined_manuallycorrected.mat']);
+
+    figure; hold on;
+    set(gcf, 'Renderer', 'painters');
+
+    meanADC = mean(averageADC_MCA, 1);
+    % stdADC  = std(averageADC_MCA, 0, 1);
+    meanB0  = mean(averageCSF_MCA, 1);
+    % stdB0   = std(averageCSF_MCA, 0, 1);
+
+stdADC  = std(averageADC_MCA, 0, 1) / sqrt(size(averageADC_MCA, 1));
+stdB0   = std(averageCSF_MCA, 0, 1) / sqrt(size(averageCSF_MCA, 1));
+    upper   = meanADC + stdADC;
+    lower   = meanADC - stdADC;
+    upperB0 = meanB0  + stdB0;
+    lowerB0 = meanB0  - stdB0;
+
+   subplot(1,2,1); hold on
+    % Plot each subject individually with their own color + name
+    for s = 1:nSubjects
+        subCol  = subjectColors(s, :);
+        subName = subject_list{s};
+        plot(binCenters, averageADC_MCA(s, :), '-', 'LineWidth', 2, ...
+            'Color', [subCol 0.5], ...
+            'DisplayName', subName);
+    end
+
+    % CI fill (no legend entry)
+    fill([binCenters fliplr(binCenters)], ...
+         [upper fliplr(lower)], ...
+         [0.7 0.7 0.8], 'EdgeColor', 'none', 'FaceAlpha', 0.2, ...
+         'HandleVisibility', 'off');
+
+    % Group mean (no per-subject color needed)
+    plot(binCenters, meanADC, 'k-', 'LineWidth', 2.5, ...
+        'DisplayName', 'Group Mean');
+
+    ylabel(['csf-mobility Mean: ' ROI]);
+    ylim([0.005 0.035]);
+    xlim([0 4.5]);
+    legend('show', 'Location', 'best');
+     title(['CSF - Median ' ROI]);
+
+    subplot(1,2,2); hold on
+
+        for s = 1:nSubjects
+            subCol  = subjectColors(s, :);
+            subName = subject_list{s};
+            plot(binCenters, averageCSF_MCA(s, :), '-', 'LineWidth', 0.5, ...
+                'Color', [subCol 0.5], ...
+                'DisplayName', subName);
+        end
+
+    fill([binCenters fliplr(binCenters)], ...
+         [upperB0 fliplr(lowerB0)], ...
+         [0.8 0.8 0.8], 'EdgeColor', 'none', 'FaceAlpha', 0.4, ...
+         'HandleVisibility', 'off');
+    plot(binCenters, meanB0, '-', 'LineWidth', 2, ...
+        'HandleVisibility', 'off');
+    ylim([0 1000]);
+    ylabel(['non-motionsensitized scan Median: ' ROI]);
+    xlabel('Dilation (mm)');
+    title(['CSF - Median - B0' ROI]);
+    hold off;
+end
