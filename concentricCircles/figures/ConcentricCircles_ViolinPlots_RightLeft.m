@@ -141,10 +141,15 @@ ylabel('CSF Mobility (mm²/s)');
 xlabel('Distance from Vessel');
 title(['CSF Mobility — ' ROI ' — L+R averaged per subject']);
 xlim([0.5 nShells+0.5]);
+ylim([0 0.03]);
 
 % t-test on 11 averaged values
 [~, p, ~, stats] = ttest(AllMeanADC(:,1), AllMeanADC(:,2));
 fprintf('ADC shell1 vs shell2 (L+R averaged): t(%d) = %.3f, p = %.4f\n', stats.df, stats.tstat, p);
+
+
+pvsas_mean = mean(AllMeanADC(:,1));
+sas_mean = mean(AllMeanADC(:,2));
 
 %% ── Figure 2: B0 ─────────────────────────────────────────────────────────
 figure('Name', ['CSF Signal (B0) — ' ROI], 'NumberTitle', 'off');
@@ -180,6 +185,9 @@ ylabel('CSF Signal (a.u.)');
 xlabel('Distance from Vessel');
 title(['CSF Signal — ' ROI ' — L+R averaged per subject']);
 xlim([0.5 nShells+0.5]);
+ylim([0 500]);
 
 [~, p, ~, stats] = ttest(AllMeanB0(:,1), AllMeanB0(:,2));
 fprintf('B0 shell1 vs shell2 (L+R averaged): t(%d) = %.3f, p = %.4f\n', stats.df, stats.tstat, p);
+
+%% calculating difference between pvsas vs. sas csf-mobility
