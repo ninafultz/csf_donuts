@@ -189,6 +189,20 @@ is_20pct_less = data(:,1) < 0.8 * data(:,2);
 disp(is_20pct_less);
 
 
+% Means
+mean1 = mean(data1);
+mean2 = mean(data2);
+
+% Standard deviations (sample std dev, divides by N-1 by default)
+std1 = std(data1);
+std2 = std(data2);
+
+
+fprintf('Data1 — Mean: %.4f, SD: %.4f\n', mean1, std1)
+fprintf('Data2 — Mean: %.4f, SD: %.4f\n', mean2, std2)
+
+% Data1 — Mean: 0.0187, SD: 0.0047
+% Data2 — Mean: 0.0433, SD: 0.0054
 %% run for M2
 clear; clc;
 %% plot to show csf mobility ring around vessel and then SAS - M1 and M2
@@ -368,3 +382,20 @@ is_20pct_less = data1 < 0.8 * data2;
 % Show which rows pass the condition
 disp(is_20pct_less);
 
+
+%% mean calculate
+
+% Means
+mean1 = mean(data1);
+mean2 = mean(data2);
+
+% Standard deviations (sample std dev, divides by N-1 by default)
+std1 = std(data1);
+std2 = std(data2);
+
+
+fprintf('Data1 — Mean: %.4f, SD: %.4f\n', mean1, std1)
+fprintf('Data2 — Mean: %.4f, SD: %.4f\n', mean2, std2)
+
+% Data1 — Mean: 0.0142, SD: 0.0033
+% Data2 — Mean: 0.0320, SD: 0.0077
