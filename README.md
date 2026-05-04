@@ -41,5 +41,5 @@ Figures can be generated using the following scripts (look in 'figures' folder):
    - `rgb_maps.m`  
    - `just_vectors_not_rgb.m`
   
-9. **Concentric Cirlces for Post-M1** (Figure 2)  
+9. **Concentric Cirlces for Post-M1** (Supplemental Figure 7,8)  
    - `ConcentricCirclesPipeline.m`
