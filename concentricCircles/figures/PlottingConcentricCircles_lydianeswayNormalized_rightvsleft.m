@@ -1,5 +1,5 @@
 %% plotting Concentric Circles lydianes way
-% csf donut protocol for CAA patients
+% csf donut protocol
 % nina fultz january 2026
 % n.e.fultz@lumc.nl
 %% goals:
@@ -65,11 +65,19 @@ for r = 1:numel(ROIs)
     % ── means ────────────────────────────────────────────────────────────
     meanADC_L   = mean(normADC_L, 1);
     meanADC_R   = mean(normADC_R, 1);
-    meanADC_all = mean([normADC_L; normADC_R], 1);
 
     meanB0_L    = mean(normB0_L,  1);
     meanB0_R    = mean(normB0_R,  1);
-    meanB0_all  = mean([normB0_L; normB0_R], 1);
+
+    ADC_subj = (normADC_L + normADC_R)/2;   
+    B0_subj  = (normB0_L  + normB0_R )/2;
+
+    meanADC_all = mean(ADC_subj,1);
+    meanB0_all  = mean(B0_subj,1);
+
+    ciADC_all = 1.96 * std(ADC_subj,0,1) / sqrt(11);
+    ciB0_all  = 1.96 * std(B0_subj,0,1)  / sqrt(11);
+
 
     % ── std ──────────────────────────────────────────────────────────────
     stdADC_L   = std(normADC_L,   0, 1);
@@ -85,7 +93,6 @@ for r = 1:numel(ROIs)
     shadeFill = @(x, m, s, col, alph) fill( ...
         [x, fliplr(x)], [m+s, fliplr(m-s)], col, ...
         'EdgeColor', 'none', 'FaceAlpha', alph);
-
     %% ── Figure 1: CSF Mobility ───────────────────────────────────────────
     figure('Name', ['CSF Mobility Normalized — ' ROI], 'NumberTitle', 'off');
     set(gcf, 'Color', 'w', 'Renderer', 'painters');
@@ -98,7 +105,8 @@ for r = 1:numel(ROIs)
     % std shading — drawn before mean lines so lines sit on top
     % shadeFill(binCenters, meanADC_L,   stdADC_L,   colLeftMean,  0.20);
     % shadeFill(binCenters, meanADC_R,   stdADC_R,   colRightMean, 0.20);
-    shadeFill(binCenters, meanADC_all, stdADC_all, colOverall,   0.15);
+    % shadeFill(binCenters, meanADC_all, stdADC_all, colOverall,   0.15);
+    shadeFill(binCenters, meanADC_all, ciADC_all, colOverall, 0.15);
 
     % mean lines
     hL_mean   = plot(binCenters, meanADC_L,   '-',  'LineWidth', 2.0, 'Color', colLeftMean);
@@ -128,7 +136,8 @@ for r = 1:numel(ROIs)
     % std shading
     % shadeFill(binCenters, meanB0_L,   stdB0_L,   colLeftMeanB0,  0.20);
     % shadeFill(binCenters, meanB0_R,   stdB0_R,   colRightMeanB0, 0.20);
-    shadeFill(binCenters, meanB0_all, stdB0_all, colOverallB0,   0.15);
+    % shadeFill(binCenters, meanB0_all, stdB0_all, colOverallB0,   0.15);
+    shadeFill(binCenters, meanB0_all, ciB0_all, colOverallB0, 0.15);
 
     % mean lines
     hL_B0mean   = plot(binCenters, meanB0_L,   '-',  'LineWidth', 2.0, 'Color', colLeftMeanB0);
